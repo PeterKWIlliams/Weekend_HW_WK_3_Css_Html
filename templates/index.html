@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block content %}
+    <h1>Shopping Helper</h1>
+
+    <form class ="form-inline" action="/items" method = "post">
+        <label for = "name">Item:</label>
+        <input type ="text" name = "name" id ="name">
+        <label for = "price">price:</label>
+        <input type ="number" name = "price" id ="price">
+        <br>
+        <label for = "quantity">Amount:</label>
+        <input type ="number" name = "quantity" id = "quantity">
+        <br>
+        <label for = "purchase_status">Purchased?</label>
+        <input type="checkbox" name="purchase_status" id="purchase_status" value="False">
+        <input type="submit" value="Add item">
+        <br>
+
+
+     
+    </form>
+    {% for item in items %}
+    <h1>{{item.name}}</h1>  
+    <h2>{{item.quantity}}</h2>
+    <h3>{{item.price}}</h3>
+    {% endfor %}
+
+    {% endblock %}
